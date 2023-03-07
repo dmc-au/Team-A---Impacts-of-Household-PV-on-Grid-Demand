@@ -6,6 +6,7 @@
 ### Team Members
 - Dave Cole, z5294919, d.massey.cole@gmail.com
 - Sam Brown, z5383791, sam.brown2@student.unsw.edu.au
+- Zoren Liu, z5383481, zorenliu@gmail.com
 
 
 ### Brief Project Description
