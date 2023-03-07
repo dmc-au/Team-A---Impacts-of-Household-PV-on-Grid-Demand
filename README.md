@@ -1,22 +1,15 @@
-# Welcome to ZZSC9020 GitHub repository for group [GROUP-NAME]
+# ZZSC9020 Repo for the A Team 
 
-This GitHub repository is the main point of access for students and lecturers of the ZZSC9020 capstone course. 
+## Project Repo Information
 
-In this repository, you will find the data to start developing your project. Also, we will use the repository to share code, documentation, data, models and other resources between the group members and course lecturers.
 
-Complete the information below regarding your group.
+### Team Members
+- Dave Cole, z5294919, d.massey.cole@gmail.com
+-
 
-## Group and project information
 
-### Group members and zIDs
-- Member 1 (zID1) - Group leader
-- Member 2 (zID2) - role
-- Member 3 (zID3) - role
-- Member 4 (zID4) - role
-
-### Brief project description
-
-Describe your project in one paragraph.
+### Brief Project Description
+This project aims to...
 
 ## Repository structure
 
