@@ -6,7 +6,7 @@
 # reference node.
 # https://aemo.com.au/en/learn/industry-terminology
 
-# Run this script from within the /data/raw folder:
+# Run this script from within the /data/raw/aemo folder:
 # > source ../../src/aemo-price-scrape.sh
 
 base_url="https://aemo.com.au/aemo/data/nem/priceanddemand/PRICE_AND_DEMAND_"
@@ -23,5 +23,5 @@ do
         curl "${full_url}" -O
     done
 done
-cat *csv > aemo-total-demand-and-price.csv
+cat *NSW1.csv > aemo-total-demand-and-price.csv
 rm *PRICE_AND_DEMAND*
