@@ -17,13 +17,10 @@ do
         if (( month < 10 ));
         then
             full_url="${base_url}${year}0${month}_NSW1.csv"
-            file_path="${full_url}"
-            curl "${full_url}" -O
         else
             full_url="${base_url}${year}${month}_NSW1.csv"
-            file_path="${full_url}"
-            curl "${full_url}" -O 
         fi
+        curl "${full_url}" -O
     done
 done
 cat *csv > aemo-total-demand-and-price.csv
