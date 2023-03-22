@@ -1,0 +1,127 @@
+---
+title: "ZZSC9020 - Data Exploration"
+author: "Zoren Liu"
+date: "29 November 2022"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  html_notebook: default
+---
+
+Loading libraries.
+
+```{r results = FALSE, warning=FALSE, message=FALSE}
+
+library(GGally)
+library(dplyr)
+library(lubridate)
+
+```
+
+Load datasets. Note, `DATETIME` is read as class string, so it is converted to class `DATETIME`.
+
+```{r}
+
+temperature <- read.csv("temperature_nsw.csv")#, stringsAsFactors = F)
+temperature$DATETIME <- as.POSIXct(temperature$DATETIME,format="%Y-%m-%d %H:%M:%S")
+
+demand <- read.csv("totaldemand_nsw.csv")
+demand$DATETIME <- as.POSIXct(demand$DATETIME,format="%Y-%m-%d %H:%M:%S")
+
+
+forecast <- read.csv("forecastdemand_nsw.csv")
+forecast$DATETIME <- as.POSIXct(forecast$DATETIME,format="%Y-%m-%d %H:%M:%S")
+
+```
+
+Let us view the data.
+
+```{r}
+
+str(temperature)
+summary(temperature)
+
+str(demand)
+summary(demand)
+
+str(forecast)
+summary(forecast)
+
+```
+
+We notice the erroneous temperature measurements of -9999. We replace those values with the average of two adjacent temperature
+measurements.
+
+```{r}
+
+ols <- which(temperature$TEMPERATURE < -50)
+for (i in ols) {
+  temperature$TEMPERATURE[i] <- mean(temperature$TEMPERATURE[i-1], temperature$TEMPERATURE[i+1])
+}
+
+```
+
+We notice `demand` have 144 datetimes that are NA. We update them by refering to adjacent datetime records.
+
+```{r}
+
+na_times <- which(is.na(demand$DATETIME))
+
+for (t in na_times) {
+  demand$DATETIME[t] <- demand$DATETIME[t-1] + 5*60
+}
+
+```
+
+
+We plot the distribution.
+
+```{r fig.width = 12, fig.height = 10, fig.align = "center", message=FALSE}
+
+plot(temperature$DATETIME, temperature$TEMPERATURE)
+
+```
+
+```{r fig.width = 12, fig.height = 10, fig.align = "center", message=FALSE}
+
+plot(demand$DATETIME, demand$TOTALDEMAND)
+
+```
+
+Let us find the daily peak demand time.
+
+```{r}
+
+max_demand <- demand %>%
+  mutate(by_date = floor_date(DATETIME, "day")) %>%
+    group_by(by_date) %>%
+    summarise(MAXDEMAND = TOTALDEMAND[which.max(TOTALDEMAND)], DATETIME = DATETIME, TOTALDEMAND=TOTALDEMAND) %>%
+  filter(MAXDEMAND == TOTALDEMAND) %>%
+  mutate(by_hour = format(as.POSIXct(DATETIME),   # Extract hours, minutes & seconds
+                 format = "%H:%M:%S"))
+
+
+# To plot time on y-axis, need a date to the time. Hence, added the same date too all `by_hour`.
+
+max_demand$by_hour <- as.POSIXct(paste(max_demand$by_date[1], max_demand$by_hour), format="%Y-%m-%d %H:%M:%S")
+
+
+
+
+```
+
+```{r fig.width = 12, fig.height = 10, fig.align = "center", message=FALSE}
+
+plot(max_demand$by_date, max_demand$by_hour)
+
+```
+
+A consistent trend we see is that the peak demand typically happens during the evening (appox 6pm - 8pm). This
+is because everyone is home. In the first half of 2010s, we see trend where, during summer and winter times, the peak demand
+are spread out from late morning to the evening (approx 11am - 6pm), most likely for cooling and heating. However, this 
+seasonal variation in power demand reduces as time goes on. This might be because of the increase in roof top solar, where
+the solar panels have taken over some of the demand from the grid.
+
+
+
