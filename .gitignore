@@ -2,4 +2,4 @@ data/raw/*
 venv/*
 .idea/*
 src/.idea/*
-src/.ipynb_checkpoints
+src/.ipynb_checkpoints/*
