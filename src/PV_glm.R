@@ -17,3 +17,6 @@ ggpairs(demand_temp_PV_data)
 
 demand_temp_PV_data.glm <- glm(TOTALDEMAND ~ .-PV.Quantity.Cumsum-PV.Output.kW.Cumsum-DATETIME, data = demand_temp_PV_data)
 summary(demand_temp_PV_data.glm)
+
+
+

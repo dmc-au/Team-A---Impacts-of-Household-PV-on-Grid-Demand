@@ -25,7 +25,6 @@ temperature_data = pd.read_csv("temperature_nsw.csv")
 temperature_data["DATETIME"] = pd.to_datetime(temperature_data["DATETIME"])
 temperature_data = temperature_data[["DATETIME", "TEMPERATURE"]]
 
-
 # Forecast demand data
 forecast_data = pd.read_csv("forecastdemand_nsw.csv")
 forecast_data["DATETIME"] = pd.to_datetime(forecast_data["DATETIME"])
@@ -68,6 +67,15 @@ daily_peak_demand = demand_data.loc[daily_peak_demand_idx].reset_index(drop=True
 daily_peak_temperature_idx = temperature_data.groupby([temperature_data['DATETIME'].dt.date])["TEMPERATURE"].idxmax()
 ## 2) Filtre dataframe to select the max indices
 daily_peak_temperature = temperature_data.loc[daily_peak_temperature_idx].reset_index(drop=True)
+
+
+# Group by day of week
+
+temp_min = demand_data.groupby(demand_data['DATETIME'].dt.weekday).min()
+temp_mean = demand_data.groupby(demand_data['DATETIME'].dt.weekday).mean()
+temp_max = demand_data.groupby(demand_data['DATETIME'].dt.weekday).max()
+
+weekday_df["MIN"] = 
 
 #%%% Plotting
 
