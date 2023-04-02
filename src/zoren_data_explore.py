@@ -75,7 +75,7 @@ temp_min = demand_data.groupby(demand_data['DATETIME'].dt.weekday).min()
 temp_mean = demand_data.groupby(demand_data['DATETIME'].dt.weekday).mean()
 temp_max = demand_data.groupby(demand_data['DATETIME'].dt.weekday).max()
 
-weekday_df["MIN"] = 
+# weekday_df["MIN"] = 
 
 #%%% Plotting
 
@@ -116,13 +116,60 @@ demand_temp_monthly_avg_data = demand_temp_monthly_avg_data.reset_index(drop=Tru
 demand_temp_PV_data = pd.merge(demand_temp_monthly_avg_data, pv_install_data, left_on=["DATETIME"], right_on=["Date"], how="inner")
 demand_temp_PV_data = demand_temp_PV_data.drop('Date', axis=1)
 
-demand_temp_PV_data.to_csv('demand_temp_PV_data.csv', index=False)
+#%%%
+# demand_temp_PV_data.to_csv('demand_temp_PV_data.csv', index=False)
 
-#%%% Plotting
+#%% Adding rain data to Sam's all_data.csv
+
+path = "C:\\Users\\AUZL503978\\Desktop\\UNSW\\2023_H2_ZZSC9020\\data"
+os.chdir(path)
+
+df = pd.read_csv("all_data.csv")
+
+#%%%
+
+bom_df = pd.read_csv("NSW_BoM_Rainfall_Data.csv")
+
+
+bom_df["DATETIME"] = pd.to_datetime(bom_df["Year"].astype(str) + "-" + bom_df["Month"].astype(str) + "-" + bom_df["Day"].astype(str))
+bom_df["DATETIME"] = bom_df["DATETIME"].dt.strftime('%Y-%m-%d')
+
+temp_df = bom_df.groupby(["DATETIME"])["Rainfall amount (millimetres)"].sum().to_frame()
+
+rainfall_df = pd.DataFrame({
+    "DATETIME": temp_df.index,
+    "RAINFALL": temp_df["Rainfall amount (millimetres)"]
+    }).reset_index(drop=True)
+
+rainfall_df = rainfall_df[rainfall_df["DATETIME"] <= "2020-11-30"]
+
+df = pd.merge(df, rainfall_df, left_on=["datetime"], right_on=["DATETIME"], how="left")
+df = df.drop("DATETIME", axis=1)
+
+#%%%
+
+# df.to_csv('all_data_rain.csv', index=False)
+
+
+#%% Peak demand different between weekday, weekend and public holiday
+
+daily_peak_demand['dayofweek'] = daily_peak_demand['DATETIME'].dt.dayofweek
+
+#%%%
+
+# average of all weeks
+
+weekly_avg_df = daily_peak_demand.groupby(["dayofweek"])["TOTALDEMAND"].mean().to_frame()
 
 
 
-    
-    
+
+
+
+
+
+
+
+
 
 

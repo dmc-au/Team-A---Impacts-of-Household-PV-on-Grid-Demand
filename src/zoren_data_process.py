@@ -13,7 +13,7 @@ sheet = "SGU-Solar"
 
 years = [n for n in range(2008, 2021)]
 
-files = [file for file in os.listdir() if '.xlsx' in file]
+files = [file for file in os.listdir() if '.xlsx' in file and "Postcode" in file]
 
 solar_data = pd.DataFrame()
 
@@ -23,8 +23,11 @@ for n in range(len(files)):
     file = files[n]
     
     data = pd.read_excel(files[n])
-    temp_sum = data.iloc[2:,1:-2].sum()
     
+    # Filtre to 2XXX
+    data = pd.concat([data.head(2), data[data["Small Generation Unit (SGU) - Solar Panel (Deemed)"].str.startswith("2")]], ignore_index=True)
+    
+   
     if n == 0:
         
         temp_sum = data.iloc[2:,1:-2].sum()
