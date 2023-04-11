@@ -17,7 +17,7 @@ In particular, our research team was aiming to answer the following question:
 “Has the uptake of residential solar systems reduced the dynamic range of electricity demand?”
 
 Our process was as follows:
-1. Peruse existing literature (not covered in this repository)
+1. Peruse existing literature
 2. Collect data
 3. Clean and explore data
 4. Create simple model
@@ -29,7 +29,12 @@ Our process was as follows:
 
 The repository has the following folder structure:
 
-- data: datasets for analysis
-- minutes: minutes for each meeting (left not more than 24h after the corresponding meeting)
-- report: RMarkdown or Jupyter notebook report in progress
-- src: source code
+- MindMap: Artefact relating to initial brainstorming of research question
+- agendas: Meeting agendas used to guide discussions with the client
+- checklists: Links to the project management related to the project
+- data: Datasets used for analysis
+- gantt_chart: High-level overview of the project's timeline
+- images: Images derived from the analysis and modeling
+- minutes: Minutes from team meetings
+- report: Written report detailing analysis and modeling
+- src: Source code
