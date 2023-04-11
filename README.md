@@ -25,7 +25,7 @@ Our process was as follows:
 6. Compare and select most effective model
 7. Determine answer to research question
 
-## Repository structure
+### Repository structure
 
 The repository has the following folder structure:
 
