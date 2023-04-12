@@ -1,5 +1,5 @@
-data/raw/*
 venv/*
 .idea/*
 src/.idea/*
 src/.ipynb_checkpoints/*
+data/raw/archive/*
