@@ -30,12 +30,13 @@ Our process was as follows:
 The repository has the following folder structure:
 
 - data: Datasets used for analysis 
-  - processed: 
-  - raw: 
+  - processed: The final dataset used for modeling
+  - raw: All raw data collected/used for analysis
 - images: Images derived from the analysis and modeling
-  - exploratory: 
+  - exploratory
+  - modeling
 - planning: Artefacts related to project planning 
-  - minutes: 
+  - minutes
 - report: Written report detailing analysis and modeling 
 - src: Source code 
-  - _archive: 
+  - _archive: Old code files not used for Production
