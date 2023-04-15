@@ -29,13 +29,13 @@ Our process was as follows:
 
 The repository has the following folder structure:
 
-- data: Datasets used for analysis
-|-- processed: 
-|-- raw: 
+- data: Datasets used for analysis 
+  - processed: 
+  - raw: 
 - images: Images derived from the analysis and modeling
-|-- exploratory: 
-- planning: Artefacts related to project planning
-|-- minutes: 
-- report: Written report detailing analysis and modeling
-- src: Source code
-|-- _archive: 
+  - exploratory: 
+- planning: Artefacts related to project planning 
+  - minutes: 
+- report: Written report detailing analysis and modeling 
+- src: Source code 
+  - _archive: 
