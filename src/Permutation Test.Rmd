@@ -1,0 +1,37 @@
+---
+title: "Permutation Testing"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(CCP)
+library(CCA)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The permutation test is performed below
+
+```{r permutation test}
+##the data used here is imported from the cleaned and prepard data produced at the end of the Python EDA Script
+all_dat <- read.csv("~/Academic/Final project/Data/full_data.csv")
+
+#scale the data
+X = subset(all_dat,select = -c(demand_min,demand_max,datetime))
+Y = subset(all_dat,select = c(demand_min,demand_max))
+Xs <- scale(X)
+Ys <- scale(Y)
+
+#perform the permutation test
+A = p.perm(Xs,Ys)
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
