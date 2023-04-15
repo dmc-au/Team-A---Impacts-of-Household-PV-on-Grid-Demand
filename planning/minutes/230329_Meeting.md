@@ -21,7 +21,7 @@
     -   How many pages in report for each section
 
     -   Making assumptions and drawing conclusions from the data and
-        > model
+         model
 
     -   
 

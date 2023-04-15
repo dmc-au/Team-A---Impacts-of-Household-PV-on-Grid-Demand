@@ -11,22 +11,22 @@ Agenda:
 -   Confirm our refined research question
 
 -   [What is the best way to divide up modelling/coding work between
-    > team members]{.mark}
+     team members]{.mark}
 
 -   [Data normalisation: how do you normalise parameters that keeps
-    > growing (e.g. solar uptake)?]{.mark}
+     growing (e.g. solar uptake)?]{.mark}
 
 1.  [Update on our data exploration progress]{.mark}
 
 2.  [Confirm our refined research question]{.mark}
 
     a.  Has the uptake of residential solar systems reduced the dynamic
-        > range of electricity demand in NSW?
+         range of electricity demand in NSW?
 
     b.  Dynamic range = peak - trough
 
     c.  Looking into daily and weekly peak but daily allows more
-        > sophisticated models
+         sophisticated models
 
     d.  AEMO price
 
@@ -37,10 +37,10 @@ Agenda:
     f.  Can briefly cover
 
 3.  [What is the best way to divide up modelling/coding work between
-    > team members?]{.mark}
+     team members?]{.mark}
 
     a.  [Can create different models which are divided up between
-        > members]{.mark}
+         members]{.mark}
 
     b.  [Fit a single model but everyone tries different methods]{.mark}
 
@@ -51,12 +51,12 @@ Agenda:
         i.  [Can connect Collab to Github]{.mark}
 
 4.  [Data normalisation: how do you normalise parameters that keeps
-    > growing (e.g. solar uptake)?]{.mark}
+     growing (e.g. solar uptake)?]{.mark}
 
     a.  [Normalisation is useful for convergence]{.mark}
 
     b.  [With varying variance wrt time, we will need a time input, look
-        > into GARCH/variance inflation factor]{.mark}
+         into GARCH/variance inflation factor]{.mark}
 
         i.  [ridge/lasso/PLS regression]{.mark}
 
@@ -65,13 +65,13 @@ Agenda:
     c.  
 
 5.  [Clarification on presentation rubric, specifically regarding to
-    > what extent should text be used in the slides.]{.mark}
+     what extent should text be used in the slides.]{.mark}
 
     a.  [For report, target audience is for data science students,
-        > academics]{.mark}
+         academics]{.mark}
 
     b.  [For presentation, target audience is CEOs, decision makers who
-        > are not well versed in data science]{.mark}
+         are not well versed in data science]{.mark}
 
         i.  [What are assumptions, findings and explain]{.mark}
 

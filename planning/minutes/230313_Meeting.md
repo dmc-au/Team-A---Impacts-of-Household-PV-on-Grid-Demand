@@ -5,7 +5,7 @@
 -   Write down some roles in the plan.
 
 -   Go through the doc together and finalise it ready for submission at
-    > the end of the session.
+     the end of the session.
 
     -   Make a copy and bring it down to the 3 pages requested.
 

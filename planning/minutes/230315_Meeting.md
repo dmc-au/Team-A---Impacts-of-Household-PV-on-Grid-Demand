@@ -25,10 +25,10 @@
 ## Notes
 
 -   Aaron: I'm starting to work on interpolating temperature data from a
-    > few mins to 30 min.
+     few mins to 30 min.
 
 -   Sam: I think based on extra lit review and data exploration we can
-    > narrow the scope down.
+     narrow the scope down.
 
 -   Dave demonstrated Git.
 

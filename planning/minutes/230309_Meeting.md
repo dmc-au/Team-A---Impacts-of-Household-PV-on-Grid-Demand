@@ -5,7 +5,7 @@
 ## Agenda
 
 -   Sam: Discuss directions we would like to take the project in, what
-    > will our research question be?
+     will our research question be?
 
 -   Sam: Assigning of articles for literature review
 
@@ -24,14 +24,14 @@
     -   Can't be put in repo, put in google drive
 
 -   Zoren: I'll try to book in for Friday or Monday after hours with the
-    > lecturer.
+     lecturer.
 
     -   Done
 
 -   Zoren/Sam: Find some literature reviews for the team to do next.
 
 -   All: Brainstorm ideas for direction on research question for
-    > Thursday's meeting.
+     Thursday's meeting.
 
 -   Aaron: Exploratory data analysis.
 
@@ -42,4 +42,4 @@
 ## Actions:
 
 -   All: Review 2 articles and make summaries. Add possible research
-    > question to Miro board: https://miro.com/app/board/uXjVMfHv0MY=/
+     question to Miro board: https://miro.com/app/board/uXjVMfHv0MY=/
