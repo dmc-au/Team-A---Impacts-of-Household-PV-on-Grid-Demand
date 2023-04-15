@@ -29,12 +29,13 @@ Our process was as follows:
 
 The repository has the following folder structure:
 
-- MindMap: Artefact relating to initial brainstorming of research question
-- agendas: Meeting agendas used to guide discussions with the client
-- checklists: Links to the project management related to the project
-- data: Datasets used for analysis
-- gantt_chart: High-level overview of the project's timeline
+- data: Datasets used for analysis 
+  - processed: 
+  - raw: 
 - images: Images derived from the analysis and modeling
-- minutes: Minutes from team meetings
-- report: Written report detailing analysis and modeling
-- src: Source code
+  - exploratory: 
+- planning: Artefacts related to project planning 
+  - minutes: 
+- report: Written report detailing analysis and modeling 
+- src: Source code 
+  - _archive: 
